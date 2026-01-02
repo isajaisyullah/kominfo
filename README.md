@@ -1,3 +1,32 @@
+## Installation
+-   git clone project
+    ```bash
+    $ git clone https://github.com/isajaisyullah/kominfo.git {new-project-folder}
+    ```
+
+-   Go to the new project folder.
+    ```bash
+    $ cd {new-project-folder}
+    ```
+    
+-   Run composer install
+    ```bash
+    $ composer install
+    ```
+-   Copy the `.env.example` to `.env` file and update the file accordingly.
+-   Generate key
+    ```bash
+    $ php artisan key:generate
+    ```
+-   Run the migration process
+    ```bash
+    $ php artisan migrate:fresh --seed
+    ```
+-   Serve
+    ```bash
+    $ php artisan serve
+    ```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
