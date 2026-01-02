@@ -14,7 +14,7 @@ class pokemonController extends Controller
      */
     public function index()
     {
-        $dataPokemon = pokemon::all();
+        $dataPokemon = pokemon::orderBy('weight', 'desc')->get();
         $ability = abilities::all();
 
         if ($dataPokemon->isNotEmpty()) {
@@ -23,6 +23,8 @@ class pokemonController extends Controller
         } 
             else {
                 for ($id = 1; $id <= 400; $id++) {
+                // $response = Http::timeout(60)->get("https://pokeapi.co/api/v2/pokemon/{$id}"); //
+
                 $request = Http::get("https://pokeapi.co/api/v2/pokemon/{$id}")->json();
                 
                 $name = $request['name'];
@@ -41,11 +43,10 @@ class pokemonController extends Controller
                     ];
 
                     pokemon::create($data);
-
-                    return view('pokemon.index', compact('pokemon'));
                 }
-
             }
+                    $pokemon = $dataPokemon;
+                    return view('pokemon.index', compact('pokemon'));
         }
     }
 

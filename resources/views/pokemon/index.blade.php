@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <img src="{{ asset('logo.png') }}" alt="Application Logo" style="width: 200px; display: block; margin-left: auto;  margin-right: auto;">
     <h1>Pokemon List</h1>
     <ul>
-        
         <table style="width:100%; border: 2px solid black; text-align: center; ">
             <tr style="border: 2px solid black;">
                 <th>Name</th>
